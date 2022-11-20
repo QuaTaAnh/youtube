@@ -1,0 +1,12 @@
+.wrapper{
+    width: 100%;
+    height: var(--default-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo > img{
+    width: 45px;
+    height: 45px;
+}
