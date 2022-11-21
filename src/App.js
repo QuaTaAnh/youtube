@@ -17,7 +17,7 @@ function App() {
             <Home />
           </MainLayout>} />
 
-          <Route path="/search" element={
+          <Route path="/search/:id" element={
           <MainLayout>
             <Search />
           </MainLayout>} />

@@ -13,6 +13,11 @@
     --font-family: 'Roboto', sans-serif;
     --default-height: 56px;
     --default-width: 1150px;
+
+    // Search
+    --search-height: 40px;
+    --search-width: 320px;
+    --search-width-btn: 50px;
 }
 
 html {
@@ -61,4 +66,11 @@ html *::-webkit-scrollbar-track {
     font-family: Roboto;
     src: url('../../assets/fonts/KFOmCnqEu92Fr1Mu7GxKOzY.woff2');
     font-weight: 900;
+}
+
+button,
+input,
+[tabline] {
+    outline: none;
+    border: none;
 }
