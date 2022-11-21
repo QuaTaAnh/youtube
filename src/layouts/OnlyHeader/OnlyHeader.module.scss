@@ -5,14 +5,7 @@
 }
 
 .container{
-    width: 100%;
-    display: flex;
+    width: var(--details-width);
     max-width: 100%;
     margin-top: var(--default-height);
-    padding: 0 40px 0 20px;
-}
-
-.content{
-    flex: 1;
-    margin-left: 80px;
 }

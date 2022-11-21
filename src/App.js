@@ -1,10 +1,11 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
-import Home from './pages/Home';
+import Feed from './pages/Feed';
 import Search from './pages/Search';
 import Video from './pages/Video';
 import Channel from './pages/Channel';
 import MainLayout from './layouts/MainLayout/MainLayout';
+import OnlyHeader from './layouts/OnlyHeader/OnlyHeader';
 
 
 function App() {
@@ -14,13 +15,13 @@ function App() {
         <Routes>
           <Route path="/" element={
           <MainLayout>
-            <Home />
+            <Feed />
           </MainLayout>} />
 
           <Route path="/search/:id" element={
-          <MainLayout>
+          <OnlyHeader>
             <Search />
-          </MainLayout>} />
+          </OnlyHeader>} />
 
           <Route path="/video" element={
           <MainLayout>

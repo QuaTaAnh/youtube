@@ -1,9 +1,13 @@
 .wrapper{
+    position: fixed;
+    top: 0;
+    z-index: 1;
     width: 100%;
     height: var(--default-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 40px 0 20px;
 }
 
 .logo > img{

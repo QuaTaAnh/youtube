@@ -1,4 +1,4 @@
-import { useState,useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';

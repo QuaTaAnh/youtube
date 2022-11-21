@@ -13,6 +13,7 @@
     --font-family: 'Roboto', sans-serif;
     --default-height: 56px;
     --default-width: 1150px;
+    --default-width-sidebar: 240px;
 
     // Search
     --search-height: 40px;
@@ -28,7 +29,6 @@ body{
     font-family: var(--font-family);
     font-size: 1.6rem;
     background-color: var(--black);
-    padding: 0 40px;
     color: var(--text-color);
 }
 
