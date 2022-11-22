@@ -9,6 +9,7 @@
 .menu{
     display: flex;
     align-items: center;
+    // justify-content: center;
     width: 208px;
     padding: 8px 0 8px 20px;
     margin: 12px 0;
@@ -20,12 +21,16 @@
 }
 
 .icon{
-    font-size: 20px;
-    text-align: left;
+    display: flex;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin: auto 0;
     padding-right: 24px;
 }
 
 .title{
+    text-align: left;
     font-size: 14px;
 }
 

@@ -1,5 +1,4 @@
 .wrapper{
-
 }
 
 .container{
@@ -13,11 +12,9 @@
 .title{
     font-size: 22px;
     margin-bottom: 12px;
-    text-transform: lowercase;
 }
 
 .title > span{
     font-weight: 700;
     color: var(--primary);
-    text-transform: none;
 }

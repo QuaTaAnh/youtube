@@ -9,12 +9,15 @@ import {requestApi} from '../../utils/request';
 const cx = classNames.bind(styles);
 
 function Feed() {
-    const [selected, setSelected] = useState('Thịnh hành');
+    const [selected, setSelected] = useState('New');
     const [videos, setVideos] = useState([]);
 
     useEffect(() =>{
         requestApi(`search?part=snippet&q=${selected}`)
-      .then((data) => setVideos(data.items))
+        .then((data) => {
+            setVideos(data.items);
+        })
+        // .catch((error) => console.log(error))
     }, [selected]);
 
     return (
@@ -22,7 +25,7 @@ function Feed() {
             <div className={cx('container')}>
                 <Sidebar selected={selected} setSelected={setSelected}/>
                 <div className={cx('content')}>
-                    <div className={cx('title')}><span>Videos</span> {selected}</div>
+                    <div className={cx('title')}>{selected} <span>videos</span></div>
                     <Videos videos={videos}/>
                 </div>
             </div>
