@@ -6,8 +6,7 @@ import MENU from '../../utils/constants';
 
 const cx = classNames.bind(styles);
 
-function Sidebar() {
-    const [selected, setSelected] = useState('Thịnh hành');
+function Sidebar({selected, setSelected}) {
 
     return (
         <div className={cx('wrapper')}>

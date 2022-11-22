@@ -1,0 +1,34 @@
+import classNames from 'classnames/bind';
+import Videos from '../../components/Videos/Videos';
+import Sidebar from '../../layouts/Sidebar/Sidebar';
+import {useEffect, useState} from 'react';
+
+import styles from './Feed.module.scss';
+import {requestApi} from '../../utils/request';
+
+const cx = classNames.bind(styles);
+
+function Feed() {
+    const [selected, setSelected] = useState('Thịnh hành');
+    const [videos, setVideos] = useState([]);
+
+    useEffect(() =>{
+        requestApi(`search?part=snippet&q=${selected}`)
+      .then((data) => setVideos(data.items))
+    }, [selected]);
+
+    return (
+        <div className={cx('wrapper')}>
+            <div className={cx('container')}>
+                <Sidebar selected={selected} setSelected={setSelected}/>
+                <div className={cx('content')}>
+                    <div className={cx('title')}><span>Videos</span> {selected}</div>
+                    <Videos videos={videos}/>
+                </div>
+            </div>
+        </div>
+
+    );
+}
+
+export default Feed;

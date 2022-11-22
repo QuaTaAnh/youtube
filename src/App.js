@@ -1,9 +1,9 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
-import Feed from './pages/Feed';
-import Search from './pages/Search';
-import Video from './pages/Video';
-import Channel from './pages/Channel';
+import Feed from './pages/Feed/Feed';
+import Search from './pages/Search/Search';
+import Video from './pages/Video/Video';
+import Channel from './pages/Channel/Channel';
 import MainLayout from './layouts/MainLayout/MainLayout';
 import OnlyHeader from './layouts/OnlyHeader/OnlyHeader';
 
