@@ -9,11 +9,10 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 const cx = classNames.bind(styles);
 
 function VideoItem({data}) {
-    console.log(data);
+    // console.log(data);
     const image = data.snippet.thumbnails.high.url;
     const title = data.snippet.title.slice(0, 60);
     const channelTitle = data.snippet.channelTitle;
-    // const avatar = data.
     return ( 
         <div className={cx('wrapper')}>
             <Link to={data.id.videoId ? `/video/${data.id.videoId}`: '/videos/cV2gBU6hKfY'}>

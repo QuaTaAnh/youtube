@@ -4,7 +4,7 @@ import Sidebar from '../../layouts/Sidebar/Sidebar';
 import {useEffect, useState} from 'react';
 
 import styles from './Feed.module.scss';
-import {requestApi} from '../../utils/request';
+import { request } from '../../utils/request';
 
 const cx = classNames.bind(styles);
 
@@ -13,11 +13,9 @@ function Feed() {
     const [videos, setVideos] = useState([]);
 
     useEffect(() =>{
-        requestApi(`search?part=snippet&q=${selected}`)
-        .then((data) => {
-            setVideos(data.items);
-        })
-        // .catch((error) => console.log(error))
+        request(`search?part=snippet&q=${selected}`)
+        .then((data) => setVideos(data.items))
+        .catch((error) => console.log(error))
     }, [selected]);
 
     return (
