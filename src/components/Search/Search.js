@@ -25,14 +25,14 @@ function Search() {
 
         if(input){
             navigate(`/search/${input}`);
-            setInput('');
+            // setInput('');
         }
     }
 
     const handleEnter = (e) => {
         if(e.key === 'Enter'){
             navigate(`/search/${input}`);
-            setInput('');
+            // setInput('');
         }
     }
 

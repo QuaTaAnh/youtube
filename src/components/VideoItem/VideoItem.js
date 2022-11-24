@@ -9,13 +9,13 @@ import { defaultImage } from '../../utils/constants';
 
 const cx = classNames.bind(styles);
 
-function VideoItem({data}) {
+function VideoItem({data, channel}) {
     // console.log(data);
     const image = data.snippet.thumbnails.high.url;
-    const title = data.snippet.title.slice(0, 60);
-    const channelTitle = data.snippet.channelTitle;
+    const title = data.snippet.title.slice(0, 50);
+    const channelTitle = data.snippet.channelTitle.slice(0, 40);
     return ( 
-        <div className={cx('wrapper')}>
+        <div className={cx('wrapper', {channel})}>
             <Link to={data.id.videoId ? `/video/${data.id.videoId}`: '/videos/cV2gBU6hKfY'}>
                 <img className={cx('img')} src={image || defaultImage} alt={title} />
             </Link>

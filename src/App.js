@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import Feed from './pages/Feed/Feed';
-import Search from './pages/Search/Search';
+import SearchFeed from './pages/SearchFeed/SearchFeed';
 import Video from './pages/Video/Video';
 import Channel from './pages/Channel/Channel';
 import MainLayout from './layouts/MainLayout/MainLayout';
@@ -20,16 +20,16 @@ function App() {
 
           <Route path="/search/:id" element={
           <OnlyHeader>
-            <Search />
+            <SearchFeed />
           </OnlyHeader>} />
 
-          <Route path="/video" element={
+          <Route path="/video/:id" element={
           <MainLayout>
             <Video />
           </MainLayout>} />
           
           <Route path="/channel/:id" element={
-          <MainLayout>
+          <MainLayout channel>
             <Channel />
           </MainLayout>} />
         </Routes>

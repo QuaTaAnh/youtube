@@ -6,11 +6,11 @@ import styles from './MainLayout.module.scss';
 
 const cx = classNames.bind(styles);
 
-function MainLayout({children}) {
+function MainLayout({children, channel}) {
     return ( 
         <div className={cx('wrapper')}>
             <Header />
-            <div className={cx('container')}>
+            <div className={cx('container',{channel})}>
                 {children}
             </div>
         </div>

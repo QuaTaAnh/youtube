@@ -30,7 +30,7 @@ function Sidebar({selected, setSelected}) {
 
 Sidebar.propTypes = {
     selected: PropTypes.string.isRequired,
-    setSelected: PropTypes.string.isRequired
+    setSelected: PropTypes.string.isRequired,
 }
 
 export default Sidebar;
