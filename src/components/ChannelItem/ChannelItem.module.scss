@@ -1,0 +1,57 @@
+.wrapper{
+    padding: 10px 16px 10px 0;
+}
+
+.container{
+    width: 280px;
+    height: 284px;
+    box-shadow: none;
+    border-radius: none;
+    // border: 1px solid #ccc;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding: 36px 0 16px 0;
+}
+
+.img{
+    width: 102px;
+    width: 102px;
+    border-radius: 50%;
+}
+
+.user-name{
+    display: flex;
+    margin: 20px 0;
+}
+
+.user-name > h3{
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.check-icon{
+    font-size: 1.2rem;
+    margin: 2px 0;
+    padding-left: 8px;
+    color: #ccc;
+}
+
+.btn-subscribe{
+    font-size: 1.4rem;
+    color: var(--white);
+    font-weight: 500;
+    border-radius: 46px;
+    margin-top: 12px;
+    padding: 8px 26px;
+    border: 1px solid #ccc;
+    background-color: var(--black);
+    cursor: pointer;
+}
+
+.btn-subscribe, .user-name{
+    text-decoration: none;
+}

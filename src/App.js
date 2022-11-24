@@ -28,7 +28,7 @@ function App() {
             <Video />
           </MainLayout>} />
           
-          <Route path="/channel" element={
+          <Route path="/channel/:id" element={
           <MainLayout>
             <Channel />
           </MainLayout>} />

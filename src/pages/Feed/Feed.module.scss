@@ -6,7 +6,8 @@
 }
 
 .content{
-    margin-left: 20px;
+    margin-left: var(--default-width-sidebar);
+    padding-left: 20px;
 }
 
 .title{

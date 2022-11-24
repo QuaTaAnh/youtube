@@ -1,37 +1,50 @@
 .wrapper {
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: var(--default-width-sidebar);
     border-right: 1px solid #333;
+    overflow-y: auto;
 }
 
 .menu{
     display: flex;
-    align-items: center;
-    // justify-content: center;
+    flex-direction: column;
     width: 208px;
-    padding: 8px 0 8px 20px;
-    margin: 12px 0;
+    margin: 12px 20px 8px 0;
     border-radius: 66px;
     cursor: pointer;
     :hover{
-        // background-color: red;
+        border-radius: 66px;
+        background-color: var(--primary);
+        .icon{
+            color: #fff;
+        }
     }
 }
 
-.icon{
+.menu-item{
+    width: 100%;
     display: flex;
     align-items: center;
-    width: 24px;
-    height: 24px;
-    margin: auto 0;
-    padding-right: 24px;
+    padding: 8px 0 8px 20px;
+    transition: all 0.3s linear;
+}
+
+.icon{
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-right: 20px;
+    color: var(--primary);
 }
 
 .title{
-    text-align: left;
     font-size: 14px;
+    color: var(--white);
 }
 
 .copyright{

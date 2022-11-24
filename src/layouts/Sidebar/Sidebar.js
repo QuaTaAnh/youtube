@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import {useState} from 'react';
 
 import styles from './Sidebar.module.scss';
 import MENU from '../../utils/constants';
@@ -17,8 +16,10 @@ function Sidebar({selected, setSelected}) {
                     onClick={() => setSelected(item.name)}
                     style={{background: item.name === selected ? 'var(--primary)' : 'black', color: 'white'}}
                 >
-                    <span className={cx('icon')} style={{color: item.name === selected ? 'white' : 'var(--primary)'}}>{item.icon}</span>
-                    <span className={cx('title')} style={{color: 'white'}}>{item.name}</span>
+                    <div className={cx('menu-item')}>
+                        <span className={cx('icon')} style={{color: item.name === selected && 'white'}}>{item.icon}</span>
+                        <span className={cx('title')} style={{color: 'white'}}>{item.name}</span>
+                    </div>
                 </button>
             ))}
 

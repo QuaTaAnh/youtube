@@ -6,6 +6,7 @@ import VideoItem from '../VideoItem/VideoItem';
 import ChannelItem from '../ChannelItem/ChannelItem';
 
 const cx = classNames.bind(styles);
+
 function Videos({videos}) {
     console.log(videos);
     return ( 
