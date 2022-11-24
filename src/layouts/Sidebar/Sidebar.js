@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import styles from './Sidebar.module.scss';
@@ -6,7 +7,6 @@ import MENU from '../../utils/constants';
 const cx = classNames.bind(styles);
 
 function Sidebar({selected, setSelected}) {
-
     return (
         <div className={cx('wrapper')}>
             {MENU.map((item, index)=>(
@@ -26,6 +26,11 @@ function Sidebar({selected, setSelected}) {
             <div className={cx('copyright')}>Copyright © 2022 Anh Trần</div>
         </div>
     );
+}
+
+Sidebar.propTypes = {
+    selected: PropTypes.string.isRequired,
+    setSelected: PropTypes.string.isRequired
 }
 
 export default Sidebar;

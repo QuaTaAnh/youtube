@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import styles from './Videos.module.scss';
@@ -8,7 +9,7 @@ import ChannelItem from '../ChannelItem/ChannelItem';
 const cx = classNames.bind(styles);
 
 function Videos({videos}) {
-    console.log(videos);
+    // console.log(videos);
     return ( 
         <div className={cx('wrapper')}>
             {videos.map((video, index)=>(
@@ -19,6 +20,10 @@ function Videos({videos}) {
             ))}
         </div>
      );
+}
+
+Videos.propTypes = {
+    videos: PropTypes.array.isRequired,
 }
 
 export default Videos;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import Header from "../Header/Header";
@@ -10,6 +11,10 @@ function OnlyHeader({children}) {
         <Header />
         <div className={cx('container')}>{children}</div>
     </div>;
+}
+
+OnlyHeader.propTypes = {
+    children: PropTypes.node.isRequired,
 }
 
 export default OnlyHeader;

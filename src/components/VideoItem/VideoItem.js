@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,7 +10,7 @@ import { defaultImage } from '../../utils/constants';
 const cx = classNames.bind(styles);
 
 function VideoItem({data}) {
-    console.log(data);
+    // console.log(data);
     const image = data.snippet.thumbnails.high.url;
     const title = data.snippet.title.slice(0, 60);
     const channelTitle = data.snippet.channelTitle;
@@ -20,13 +21,17 @@ function VideoItem({data}) {
             </Link>
             <div className={cx('content')}>
                 <Link to={data.id.videoId ? `/video/${data.id.videoId}`: '/videos/cV2gBU6hKfY'} className={cx('title')}>{title}</Link>
-                <Link to={data.snippet.channelId ? `/video/${data.snippet.channelId}`: '/watch?v=SYAwVG6Ujco'} className={cx('channel-title')}>
+                <Link to={data.snippet.channelId ? `/channel/${data.snippet.channelId}`: '/watch?v=SYAwVG6Ujco'} className={cx('channel-title')}>
                     {channelTitle}
                     <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle}/>
                 </Link>
             </div>
         </div>
      );
+}
+
+VideoItem.propTypes = {
+    data: PropTypes.object.isRequired,
 }
 
 export default VideoItem;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,7 +7,6 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import styles from './ChannelItem.module.scss';
 
 const cx = classNames.bind(styles);
-
 
 function ChannelItem({data}) {
     console.log(data);
@@ -31,6 +31,10 @@ function ChannelItem({data}) {
             </div>
          </div>
      );
+}
+
+ChannelItem.propsTypes = {
+    data: PropTypes.object.isRequired,
 }
 
 export default ChannelItem;
