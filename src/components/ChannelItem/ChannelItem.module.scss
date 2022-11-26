@@ -1,13 +1,15 @@
 .wrapper{
+    width: 296px;
+    height: 284px;
     padding: 10px 16px 10px 0;
+    a{
+        text-decoration: none;
+    }
 }
 
-.container{
-    width: 280px;
-    height: 284px;
-    box-shadow: none;
-    border-radius: none;
-    // border: 1px solid #ccc;
+.channel{
+    margin: -96px auto 0;
+    padding: 0;
 }
 
 .content{
@@ -28,9 +30,11 @@
     margin: 20px 0;
 }
 
-.user-name > h3{
+.user-name h3{
     font-size: 1.8rem;
     color: var(--white);
+    outline: none;
+    text-decoration: none;
 }
 
 .check-icon{
@@ -40,18 +44,8 @@
     color: #ccc;
 }
 
-.btn-subscribe{
+.subscriber{
     font-size: 1.4rem;
-    color: var(--white);
-    font-weight: 500;
-    border-radius: 46px;
-    margin-top: 12px;
-    padding: 8px 26px;
-    border: 1px solid #ccc;
-    background-color: var(--black);
-    cursor: pointer;
-}
-
-.btn-subscribe, .user-name{
-    text-decoration: none;
+    margin-top: -14px;
+    color: #ccc;
 }

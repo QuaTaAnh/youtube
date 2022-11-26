@@ -15,14 +15,15 @@ function Channel() {
     const [videos, setVideos] = useState([]);
     const { id } = useParams();
     
-    console.log(channel);
+    // console.log(channel);
     useEffect(() => {
         const fetchResults = async () => {
-          const data = await request(`channels?part=snippet&id=${id}`);
-          setChannel(data.items[0]);
+            const data = await request(`channels?part=snippet&id=${id}`);
+
+            setChannel(data?.items[0]);
           
             const videos = await request(`search?channelId=${id}&part=snippet%2Cid&order=date`);
-            setVideos(videos.items);
+            setVideos(videos?.items);
         };
         fetchResults();
     }, [id]);
@@ -32,8 +33,8 @@ function Channel() {
             <div className={cx('img')}>
                 <img src={images.bannerChannel} alt='BannerChannel'/>
             </div>
+                    <ChannelItem data={channel} channel/>
             <div className={cx('content')}>
-                    {/* <ChannelItem data={channel} channel/> */}
                     <Videos videos={videos} channel/>
             </div>
         </div>

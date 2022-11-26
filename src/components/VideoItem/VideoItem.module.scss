@@ -11,8 +11,14 @@
 }
 
 .channel{
-    margin: 0 auto;
+    margin: -60px auto 50px;
     padding: 16px 8px;
+}
+
+.offerVideo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .img{

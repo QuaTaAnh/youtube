@@ -25,7 +25,7 @@ function Search() {
 
         if(input){
             navigate(`/search/${input}`);
-            // setInput('');
+            setInput('');
         }
     }
 

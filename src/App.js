@@ -18,7 +18,7 @@ function App() {
             <Feed />
           </MainLayout>} />
 
-          <Route path="/search/:id" element={
+          <Route path="/search/:searchTerm" element={
           <OnlyHeader>
             <SearchFeed />
           </OnlyHeader>} />

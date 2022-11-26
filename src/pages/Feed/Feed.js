@@ -17,7 +17,6 @@ function Feed() {
         .then((data) => setVideos(data.items))
         .catch((error) => console.log(error))
     }, [selected]);
-
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
@@ -28,7 +27,6 @@ function Feed() {
                 </div>
             </div>
         </div>
-
     );
 }
 

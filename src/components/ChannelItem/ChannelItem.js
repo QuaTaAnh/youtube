@@ -11,32 +11,27 @@ const cx = classNames.bind(styles);
 
 function ChannelItem({data, channel}) {
     // console.log(data);
-    // const image = data.snippet.thumbnails.high.url;
-    // const channelTitle1 = data.snippet.channelTitle;
-    // const channelTitle2 = data.snippet.title;
+    const image = data?.snippet?.thumbnails?.high?.url;
+    const channelTitle1 = data?.snippet?.channelTitle;
+    const channelTitle2 = data?.snippet?.title;
     // const subscriberCount = data.statistics.subscriberCount;
 
     return ( 
-         <div className={cx('wrapper')}>
-             <div className={cx('container')}>
-                    <div className={cx('content')}>
-                       <Link to={`/channel/${data.id.channelId}`}>
-                             <img className={cx('img')} src={data.snippet.thumbnails.high.url || defaultImage} alt={data.snippet.channelTitle}/>
-                       </Link>
-                        <Link to={`/channel/${data.id.channelId}`} className={cx('user-name')}>
-                            <h3>{data.snippet.title}</h3>
-                            <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle}/>
-                            {data?.statistics?.subscriberCount &&(
-                                <div>
-                                    {parseInt(data.statistics.subscriberCount).toLocaleString('en-US')} Subscribers
-                                </div>
-                            )}
-                        </Link>
-                        {/* <div className={cx('btn-subscribe')}>
-                            Đăng ký
-                        </div> */}
+         <div className={cx('wrapper', {channel})}>
+            <Link to={`/channel/${data?.id?.channelId}`}>
+                <div className={cx('content')}>
+                    <img className={cx('img')} src={image || defaultImage} alt={channelTitle1}/>
+                    <div className={cx('user-name')}>
+                        <h3>{channelTitle2}</h3>
+                        <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle}/>
                     </div>
-            </div>
+                    {data?.statistics?.subscriberCount &&(
+                        <div className={cx('subscriber')}>
+                            {parseInt(data?.statistics?.subscriberCount).toLocaleString('en-US')} Subscribers
+                        </div>
+                    )}
+                </div>
+            </Link>
          </div>
      );
 }

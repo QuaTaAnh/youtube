@@ -1,0 +1,14 @@
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    // width: 100%;
+}
+
+.video{
+    // position: sticky;
+    flex: 1;
+}
+
+.video-player{
+    width: 100%;
+}
