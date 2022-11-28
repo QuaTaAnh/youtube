@@ -1,30 +1,28 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
-import classNames from 'classnames/bind';
 import { useParams } from 'react-router-dom';
 
 import styles from './SearchFeed.module.scss';
 import Videos from '../../components/Videos/Videos';
 import { request } from '../../utils/request';
 
-const cx = classNames.bind(styles);
-
 function SearchFeed() {
-    const {videos, setVideos} = useState([]);
     const { searchTerm } = useParams();
+    const {videos, setVideos} = useState([]);
 
     useEffect(() => {
         request(`search?part=snippet&q=${searchTerm}`)
         .then((data) => setVideos(data.items))
-        // .catch((error) => console.log(error))
-    }, [searchTerm, setVideos]);
+        .catch((error) => console.log(error))
+    }, [searchTerm]);
 
     return (
-        <div className={cx('wrapper')}>
-            <div className={cx('title-search')}>
+        <div className={styles.wrapper}>
+            <div className={styles.titleSearch}>
                 Results: <span>{searchTerm}</span>
             </div>
             <div>
-            {/* <Videos videos={videos}/> */}
+                <Videos videos={videos}/>
             </div>
         </div>
     );

@@ -1,29 +1,26 @@
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
 
 import styles from './Sidebar.module.scss';
 import MENU from '../../utils/constants';
 
-const cx = classNames.bind(styles);
-
 function Sidebar({selected, setSelected}) {
     return (
-        <div className={cx('wrapper')}>
+        <div className={styles.wrapper}>
             {MENU.map((item, index)=>(
                 <button
                     key={index}
-                    className={cx('menu')}
+                    className={styles.menu}
                     onClick={() => setSelected(item.name)}
                     style={{background: item.name === selected ? 'var(--primary)' : 'black', color: 'white'}}
                 >
-                    <div className={cx('menu-item')}>
-                        <span className={cx('icon')} style={{color: item.name === selected && 'white'}}>{item.icon}</span>
-                        <span className={cx('title')} style={{color: 'white'}}>{item.name}</span>
+                    <div className={styles.menuItem}>
+                        <span className={styles.icon} style={{color: item.name === selected && 'white'}}>{item.icon}</span>
+                        <span className={styles.title} style={{color: 'white'}}>{item.name}</span>
                     </div>
                 </button>
             ))}
 
-            <div className={cx('copyright')}>Copyright © 2022 Anh Trần</div>
+            <div className={styles.copyright}>Copyright © 2022 Anh Trần</div>
         </div>
     );
 }

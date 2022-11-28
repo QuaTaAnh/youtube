@@ -1,13 +1,9 @@
 import { useState, useRef } from 'react';
-import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Search.module.scss';
 import { useNavigate } from 'react-router-dom';
-
-const cx = classNames.bind(styles);
-
 
 function Search() {
     const inputRef = useRef();
@@ -37,16 +33,18 @@ function Search() {
     }
 
     return (
-            <div className={cx('search')}>
+            <div className={styles.search}>
                 <input
-                ref={inputRef}
-                value={input}
-                placeholder="Tìm kiếm..."
-                onChange={(e)=> setInput(e.target.value)}
-                onKeyPress={handleEnter}
+                    ref={inputRef}
+                    value={input}
+                    placeholder="Tìm kiếm..."
+                    onChange={(e)=> setInput(e.target.value)}
+                    onKeyPress={handleEnter}
                 />
-                {!!input && <FontAwesomeIcon className={cx('clear-btn')} icon={faXmark} onClick={handleClear} />}
-                <button type="submit" className={cx('search-btn')}><FontAwesomeIcon icon={faMagnifyingGlass} onClick={handleSubmit} /></button>
+                {!!input && <FontAwesomeIcon className={styles.clearBtn} icon={faXmark} onClick={handleClear} />}
+                <button type="submit" className={styles.searchBtn}>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} onClick={handleSubmit} />
+                </button>
             </div>
     );
 }

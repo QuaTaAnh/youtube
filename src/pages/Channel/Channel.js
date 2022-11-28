@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import classNames from 'classnames/bind';
 
 import ChannelItem from "../../components/ChannelItem/ChannelItem";
 import Videos from "../../components/Videos/Videos";
@@ -8,18 +7,14 @@ import { images } from '../../assets/images/index';
 import styles from './Channel.module.scss';
 import { request } from '../../utils/request';
 
-const cx = classNames.bind(styles);
-
 function Channel() {
     const [channel, setChannel] = useState();
     const [videos, setVideos] = useState([]);
     const { id } = useParams();
     
-    // console.log(channel);
     useEffect(() => {
         const fetchResults = async () => {
-            const data = await request(`channels?part=snippet&id=${id}`);
-
+            const data = await request(`channels?part=snippet,statistics&id=${id}`);
             setChannel(data?.items[0]);
           
             const videos = await request(`search?channelId=${id}&part=snippet%2Cid&order=date`);
@@ -29,12 +24,12 @@ function Channel() {
     }, [id]);
 
     return (
-        <div className={cx('wrapper')}>
-            <div className={cx('img')}>
+        <div className={styles.wrapper}>
+            <div className={styles.img}>
                 <img src={images.bannerChannel} alt='BannerChannel'/>
             </div>
                     <ChannelItem data={channel} channel/>
-            <div className={cx('content')}>
+            <div className={styles.content}>
                     <Videos videos={videos} channel/>
             </div>
         </div>

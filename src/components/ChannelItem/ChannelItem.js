@@ -10,11 +10,10 @@ import { defaultImage } from '../../utils/constants';
 const cx = classNames.bind(styles);
 
 function ChannelItem({data, channel}) {
-    // console.log(data);
     const image = data?.snippet?.thumbnails?.high?.url;
     const channelTitle1 = data?.snippet?.channelTitle;
     const channelTitle2 = data?.snippet?.title;
-    // const subscriberCount = data.statistics.subscriberCount;
+    const subscriberCount = data?.statistics?.subscriberCount;
 
     return ( 
          <div className={cx('wrapper', {channel})}>
@@ -25,9 +24,9 @@ function ChannelItem({data, channel}) {
                         <h3>{channelTitle2}</h3>
                         <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle}/>
                     </div>
-                    {data?.statistics?.subscriberCount &&(
+                    {subscriberCount &&(
                         <div className={cx('subscriber')}>
-                            {parseInt(data?.statistics?.subscriberCount).toLocaleString('en-US')} Subscribers
+                            {parseInt(subscriberCount).toLocaleString('en-US')} Subscribers
                         </div>
                     )}
                 </div>
