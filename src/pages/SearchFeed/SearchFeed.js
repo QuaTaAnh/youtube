@@ -8,23 +8,23 @@ import Loader from '../../components/Loader/Loader';
 
 function SearchFeed() {
     const { searchTerm } = useParams();
-    const [loader, setLoader] = useState(false);
     const [searchVideos, setSearchVideos] = useState([]);
+    const [showLoader, setShowLoader] = useState(false);
 
     useEffect(() => {
-        setLoader(true);
+        setShowLoader(true);
         request(`search?part=snippet&q=${searchTerm}`)
           .then((data) => setSearchVideos(data.items))
-        setLoader(false);
+        setShowLoader(false);
       }, [searchTerm]);
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.titleSearch}>
-                Results: <span>{searchTerm}</span>
+                Kết quả: <span>{searchTerm}</span>
             </div>
-            <div>
-                {loader && <Loader />}
+            <div className={styles.videos}>
+                {showLoader && <Loader />}
                 {<Videos videos={searchVideos} search/>}
             </div>
         </div>

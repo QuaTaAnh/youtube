@@ -5,9 +5,9 @@
 }
 
 .load{
-    font-size: 60px;
+    font-size: 40px;
     color: var(--primary);
-    animation: spinner 2s linear infinite;
+    animation: spinner 1.2s linear infinite;
 }
 
 @keyframes spinner{

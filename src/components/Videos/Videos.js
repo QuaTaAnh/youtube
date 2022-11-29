@@ -9,8 +9,8 @@ import Loader from '../Loader/Loader';
 
 const cx = classNames.bind(styles);
 
-function Videos({videos, channel, offerVideo, setLoader, search}) {
-    if(!videos.length || setLoader(true)) {
+function Videos({videos, channel, offerVideo, search}) {
+    if(!videos.length) {
         return <Loader />;
     }
     return ( 

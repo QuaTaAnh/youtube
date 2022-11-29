@@ -38,7 +38,7 @@ function Search() {
                     ref={inputRef}
                     value={searchTerm}
                     placeholder="Tìm kiếm..."
-                    onChange={(e)=> setSearchTerm(e.target.value)}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                     onKeyPress={handleEnter}
                 />
                 {!!searchTerm && <FontAwesomeIcon className={styles.clearBtn} icon={faXmark} onClick={handleClear} />}

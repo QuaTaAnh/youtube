@@ -23,14 +23,14 @@ function VideoItem({ data: {id: {videoId}, snippet}, channel, offerVideo, search
 
     return ( 
         <div className={classes}>
-            <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'} onClick={()=> document.title = title}>
+            <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'}>
                 <img className={cx('img')} src={image || defaultImage} alt={title} />
             </Link>
-            <div className={cx('content')} onClick={()=> document.title = title}>
-                <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'} className={cx('title')} onClick={()=> document.title = channelTitle}>
+            <div className={cx('content')}>
+                <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'} className={cx('title')}>
                     {title}
                 </Link>
-                <Link to={channelId ? `/channel/${channelId}`: '/watch?v=SYAwVG6Ujco'} className={cx('channel-title')}  onClick={()=> document.title = title}>
+                <Link to={channelId ? `/channel/${channelId}`: '/watch?v=SYAwVG6Ujco'} className={cx('channel-title')} >
                     {channelTitle}
                     <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle}/>
                 </Link>

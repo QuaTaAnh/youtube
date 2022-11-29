@@ -1,7 +1,15 @@
 .titleSearch{
     font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     span{
+        margin-left: 10px;
         font-size: 24px;
         color: var(--primary);
     }
+}
+
+.videos{
+    margin-top: 68px;
 }

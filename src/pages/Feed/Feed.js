@@ -7,17 +7,17 @@ import { request } from '../../utils/request';
 import Loader from '../../components/Loader/Loader';
 
 function Feed() {
-    document.title = "YouTube";
-    const [selected, setSelected] = useState('New');
+    const [selected, setSelected] = useState('Thịnh hành');
     const [feedVideos, setFeedVideos] = useState([]);
-    const [loader, setLoader] = useState(false);
+    const [showLoader, setShowLoader] = useState(false);
+    document.title = selected;
     
     useEffect(() =>{
-        setLoader(true);
+        setShowLoader(true);
         request(`search?part=snippet&q=${selected}`)
         .then((data) => setFeedVideos(data.items))
         .catch((error) => console.log(error))
-        setLoader(false);
+        setShowLoader(false);
     }, [selected]);
 
     return (
@@ -26,8 +26,8 @@ function Feed() {
                 <Sidebar selected={selected} setSelected={setSelected}/>
                 <div className={styles.content}>
                     <div className={styles.title}>{selected} <span>videos</span></div>
-                    {loader && <Loader />}
-                    <Videos videos={feedVideos} setLoader={setLoader}/>
+                    {showLoader && <Loader />}
+                    <Videos videos={feedVideos}/>
                 </div>
             </div>
         </div>
