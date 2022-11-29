@@ -49,3 +49,32 @@
     margin-top: -14px;
     color: #ccc;
 }
+
+@media only screen and (max-width: 426px) {
+    body, html {
+        min-width: 580px;
+    }
+
+    .wrapper{
+        width: 100%;
+        padding: 0;
+        margin: 12px 0;
+    }
+
+    .channel{
+        margin: -100px auto 0;
+    }
+
+    .img{
+        width: 120px;
+        height: 120px;
+    }
+
+    .user-name > h3{
+        font-size: 26px;
+    }
+
+    .check-icon{
+        font-size: 22px;
+    }
+}

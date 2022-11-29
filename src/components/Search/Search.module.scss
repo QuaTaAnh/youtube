@@ -1,7 +1,3 @@
-.wrapper{
-     
-} 
-
 .search{
     position: relative;
     display: flex;
@@ -54,4 +50,26 @@
 
 .search-btn:hover{
     background-color: #f0f0f0;
+}
+
+@media only screen and (max-width: 426px) {
+    body {
+        min-width: 580px;
+    }
+
+    .search{
+        height: calc(var(--search-height) + 8px);
+        input{
+            width: 100%;
+            font-size: 20px;
+            padding-right: 46px;
+        }
+    }
+    .clearBtn{
+        font-size: 24px;
+    }
+
+    .searchBtn{
+        font-size: 26px;
+    }
 }

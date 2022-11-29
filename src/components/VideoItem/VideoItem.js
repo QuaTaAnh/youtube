@@ -23,9 +23,11 @@ function VideoItem({ data: {id: {videoId}, snippet}, channel, offerVideo, search
 
     return ( 
         <div className={classes}>
-            <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'}>
-                <img className={cx('img')} src={image || defaultImage} alt={title} />
-            </Link>
+            <div className={cx('image')}>
+                <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'}>
+                    <img className={cx('img')} src={image || defaultImage} alt={title} />
+                </Link>
+            </div>
             <div className={cx('content')}>
                 <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'} className={cx('title')}>
                     {title}
