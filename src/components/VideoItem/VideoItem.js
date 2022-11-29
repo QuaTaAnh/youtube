@@ -9,24 +9,28 @@ import { defaultImage } from '../../utils/constants';
 
 const cx = classNames.bind(styles);
 
-function VideoItem({ data: {id: {videoId}, snippet}, channel, offerVideo}) {
+function VideoItem({ data: {id: {videoId}, snippet}, channel, offerVideo, search}) {
     const classes = cx('wrapper', {
         channel, 
-        offerVideo
+        offerVideo,
+        search
     })
-    // console.log(data);
+
     const image = snippet?.thumbnails?.high?.url;
     const title = snippet?.title.slice(0, 50);
     const channelTitle = snippet?.channelTitle.slice(0, 40);
     const channelId = snippet?.channelId;
+
     return ( 
         <div className={classes}>
-            <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'}>
+            <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'} onClick={()=> document.title = title}>
                 <img className={cx('img')} src={image || defaultImage} alt={title} />
             </Link>
-            <div className={cx('content')}>
-                <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'} className={cx('title')}>{title}</Link>
-                <Link to={channelId ? `/channel/${channelId}`: '/watch?v=SYAwVG6Ujco'} className={cx('channel-title')}>
+            <div className={cx('content')} onClick={()=> document.title = title}>
+                <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'} className={cx('title')} onClick={()=> document.title = channelTitle}>
+                    {title}
+                </Link>
+                <Link to={channelId ? `/channel/${channelId}`: '/watch?v=SYAwVG6Ujco'} className={cx('channel-title')}  onClick={()=> document.title = title}>
                     {channelTitle}
                     <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle}/>
                 </Link>

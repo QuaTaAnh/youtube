@@ -1,20 +1,22 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import styles from './SearchFeed.module.scss';
 import Videos from '../../components/Videos/Videos';
 import { request } from '../../utils/request';
+import Loader from '../../components/Loader/Loader';
 
 function SearchFeed() {
     const { searchTerm } = useParams();
-    const {videos, setVideos} = useState([]);
+    const [loader, setLoader] = useState(false);
+    const [searchVideos, setSearchVideos] = useState([]);
 
     useEffect(() => {
+        setLoader(true);
         request(`search?part=snippet&q=${searchTerm}`)
-        .then((data) => setVideos(data.items))
-        .catch((error) => console.log(error))
-    }, [searchTerm]);
+          .then((data) => setSearchVideos(data.items))
+        setLoader(false);
+      }, [searchTerm]);
 
     return (
         <div className={styles.wrapper}>
@@ -22,7 +24,8 @@ function SearchFeed() {
                 Results: <span>{searchTerm}</span>
             </div>
             <div>
-                <Videos videos={videos}/>
+                {loader && <Loader />}
+                {<Videos videos={searchVideos} search/>}
             </div>
         </div>
     );

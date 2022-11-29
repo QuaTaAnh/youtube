@@ -7,28 +7,28 @@ import { useNavigate } from 'react-router-dom';
 
 function Search() {
     const inputRef = useRef();
-    const [input, setInput] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();
 
 
     const handleClear = () => {
-        setInput('');
+        setSearchTerm('');
         inputRef.current.focus();
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(input){
-            navigate(`/search/${input}`);
-            setInput('');
+        if(searchTerm){
+            navigate(`/search/${searchTerm}`);
+            setSearchTerm('');
         }
     }
 
     const handleEnter = (e) => {
         if(e.key === 'Enter'){
-            navigate(`/search/${input}`);
-            // setInput('');
+            navigate(`/search/${searchTerm}`);
+            setSearchTerm('');
         }
     }
 
@@ -36,12 +36,12 @@ function Search() {
             <div className={styles.search}>
                 <input
                     ref={inputRef}
-                    value={input}
+                    value={searchTerm}
                     placeholder="Tìm kiếm..."
-                    onChange={(e)=> setInput(e.target.value)}
+                    onChange={(e)=> setSearchTerm(e.target.value)}
                     onKeyPress={handleEnter}
                 />
-                {!!input && <FontAwesomeIcon className={styles.clearBtn} icon={faXmark} onClick={handleClear} />}
+                {!!searchTerm && <FontAwesomeIcon className={styles.clearBtn} icon={faXmark} onClick={handleClear} />}
                 <button type="submit" className={styles.searchBtn}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} onClick={handleSubmit} />
                 </button>
