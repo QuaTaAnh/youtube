@@ -40,8 +40,8 @@ function Video() {
                         </div>
                     </Link>
                     <div className={styles.view}>
-                        <p><strong>{parseInt(video?.statistics?.viewCount).toLocaleString('en-US')}</strong> views</p>
-                        <p><strong>{parseInt(video?.statistics?.likeCount).toLocaleString('en-US')}</strong> likes</p>
+                        <p><strong>{parseInt(video?.statistics?.viewCount).toLocaleString('en-US')}</strong> lượt xem</p>
+                        <p><strong>{parseInt(video?.statistics?.likeCount).toLocaleString('en-US')}</strong> lượt thích</p>
                     </div>
                 </div>
             </div>
