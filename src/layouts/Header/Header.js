@@ -7,7 +7,7 @@ import Search from '../../components/Search/Search';
 function Header() {
     return (
     <div className={styles.wrapper}>
-        <Link to='/' className={styles.logo}>
+        <Link to='/' className={styles.logo} onClick={()=>document.title = 'YouTube'}>
             <img src={logo} alt='Logo'/>
         </Link>
         <Search />

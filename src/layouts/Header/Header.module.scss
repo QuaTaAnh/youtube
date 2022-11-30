@@ -23,7 +23,7 @@
 
 @media only screen and (max-width: 426px) {
     body, html {
-        min-width: 580px;
+        min-width: 600px;
     }
 
     .wrapper{
@@ -35,9 +35,5 @@
     .logo > img{
         width: 60px;
         height: 60px;
-    }
-
-    .menu{
-        display: block;
     }
 }

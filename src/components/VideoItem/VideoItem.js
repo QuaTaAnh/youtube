@@ -23,16 +23,16 @@ function VideoItem({ data: {id: {videoId}, snippet}, channel, offerVideo, search
 
     return ( 
         <div className={classes}>
-            <div className={cx('image')}>
+            <div className={cx('image')} onClick={() => document.title = title}>
                 <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'}>
                     <img className={cx('img')} src={image || defaultImage} alt={title} />
                 </Link>
             </div>
             <div className={cx('content')}>
-                <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'} className={cx('title')}>
+                <Link to={videoId ? `/video/${videoId}`: '/videos/cV2gBU6hKfY'} className={cx('title')} onClick={() => document.title = title}>
                     {title}
                 </Link>
-                <Link to={channelId ? `/channel/${channelId}`: '/watch?v=SYAwVG6Ujco'} className={cx('channel-title')} >
+                <Link to={channelId ? `/channel/${channelId}`: '/watch?v=SYAwVG6Ujco'} className={cx('channel-title')} onClick={() => document.title = channelTitle}>
                     {channelTitle}
                     <FontAwesomeIcon className={cx('check-icon')} icon={faCheckCircle}/>
                 </Link>
@@ -43,8 +43,8 @@ function VideoItem({ data: {id: {videoId}, snippet}, channel, offerVideo, search
 
 VideoItem.propTypes = {
     data: PropTypes.object.isRequired,
-    channel: PropTypes.bool.isRequired,
-    offerVideo: PropTypes.bool.isRequired,
+    channel: PropTypes.bool,
+    offerVideo: PropTypes.bool,
 }
 
 export default VideoItem;

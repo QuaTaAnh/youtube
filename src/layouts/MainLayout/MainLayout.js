@@ -19,7 +19,7 @@ function MainLayout({children, channel}) {
 
 MainLayout.propTypes = {
     children: PropTypes.node.isRequired,
-    channel: PropTypes.bool.isRequired,
+    channel: PropTypes.bool,
 }
 
 export default MainLayout;

@@ -25,7 +25,9 @@ function Video() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.video}>
-                <ReactPlayer width='1000px' height='500px' url={`https://www.youtube.com/watch?v=${id}`} playing controls/>
+                <div className={styles.videoPlayer}>
+                    <ReactPlayer width='100%' height='100%' url={`https://www.youtube.com/watch?v=${id}`} playing controls/>
+                </div>
                 <div className={styles.title}>
                     {video?.snippet?.title}
                 </div>

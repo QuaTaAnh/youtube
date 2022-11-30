@@ -27,8 +27,8 @@ function Videos({videos, channel, offerVideo, search}) {
 
 Videos.propTypes = {
     videos: PropTypes.array.isRequired,
-    channel: PropTypes.bool.isRequired,
-    offerVideo: PropTypes.bool.isRequired,
+    channel: PropTypes.bool,
+    offerVideo: PropTypes.bool,
 }
 
 export default Videos;

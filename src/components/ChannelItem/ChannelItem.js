@@ -15,12 +15,8 @@ function ChannelItem({data, channel}) {
     const channelTitle2 = data?.snippet?.title;
     const subscriberCount = data?.statistics?.subscriberCount;
 
-    const handleClick = () => {
-        document.title = channelTitle1;
-    }
-
     return ( 
-         <div className={cx('wrapper', {channel})} onClick={handleClick}>
+         <div className={cx('wrapper', {channel})} onClick={() => document.title = channelTitle2}>
             <Link to={`/channel/${data?.id?.channelId}`}>
                 <div className={cx('content')}>
                     <img className={cx('img')} src={image || defaultImage} alt={channelTitle1}/>
