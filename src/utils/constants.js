@@ -14,7 +14,7 @@ const MENU = [
     {name: 'Phim', icon: <FontAwesomeIcon icon={faFilm}/>},
     {name: 'Gaming', icon: <FontAwesomeIcon icon={faGamepad}/>},
     {name: 'Trực tiếp', icon: <FontAwesomeIcon icon={faVideo}/>},
-    {name: 'Thê thao', icon: <FontAwesomeIcon icon={faTrophy}/>},
+    {name: 'Thể thao', icon: <FontAwesomeIcon icon={faTrophy}/>},
     {name: 'Thời trang', icon: <FontAwesomeIcon icon={faShirt}/>},
 ]
 

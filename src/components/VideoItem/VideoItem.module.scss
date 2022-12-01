@@ -6,7 +6,7 @@
     box-shadow: none;
     border-radius: none;
     a{
-        height: 150;
+        height: 166px;
     }
 }
 
@@ -25,17 +25,18 @@
 
 .img{
     width: 100%;
-    height: 150px;
+    height: 166px;
     object-fit: cover;
-    overflow: hidden;
+    border-radius: 20px;
+    visibility: inherit;
 }
 
 .content{
     display: flex;
     flex-direction: column;
     height: 104px;
-    background-color: #1E1E1E;
     padding: 12px;
+    margin-top: -8px;
 }
 
 .title, .channel-title{
@@ -51,7 +52,7 @@
 .channel-title{
     font-size: 1.2rem;
     color: #ccc;
-    margin-top: 8px;
+    padding-top: 6px;
 }
 
 .check-icon{

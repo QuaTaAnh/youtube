@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px 0 20px;
+    padding: 0 20px;
     background-color: var(--black);
 }
 
@@ -16,9 +16,45 @@
     height: 45px;
 }
 
-.menu{
-    font-size: 48px;
-    display: none;
+.login{
+    display: flex; 
+    align-items: center;
+}
+
+.more{
+    padding: 8px;
+    background-color: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+.btnMore{
+    width: 20px;
+    height: 20px;
+}
+
+.btnLogin{
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        width: 126px;
+        height: 34px;
+        border-radius: 50px;
+        cursor: pointer;
+        background-color: white;
+        color: #065fd4;
+    }
+    :hover{
+        background-color: #def1ff;
+    }
+}
+
+.loginIcon{
+    padding-right: 8px;
+    font-size: 20px;
 }
 
 @media only screen and (max-width: 426px) {

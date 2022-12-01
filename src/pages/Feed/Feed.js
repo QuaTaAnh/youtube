@@ -14,7 +14,7 @@ function Feed() {
     
     useEffect(() =>{
         setShowLoader(true);
-        request(`search?part=snippet&q=${selected}`)
+        request(`search?part=id,snippet&q=${selected}`)
         .then((data) => setFeedVideos(data.items))
         .catch((error) => console.log(error))
         setShowLoader(false);
@@ -25,7 +25,7 @@ function Feed() {
             <div className={styles.container}>
                 <Sidebar selected={selected} setSelected={setSelected}/>
                 <div className={styles.content}>
-                    <div className={styles.title}>{selected} <span>videos</span></div>
+                    <div className={styles.title}>{selected}</div>
                     {showLoader && <Loader />}
                     <Videos videos={feedVideos}/>
                 </div>
