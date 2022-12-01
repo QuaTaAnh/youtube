@@ -9,14 +9,14 @@ import { defaultImage } from '../../utils/constants';
 
 const cx = classNames.bind(styles);
 
-function ChannelItem({data, channel}) {
+function ChannelItem({data, channel, search}) {
     const image = data?.snippet?.thumbnails?.high?.url;
     const channelTitle1 = data?.snippet?.channelTitle;
     const channelTitle2 = data?.snippet?.title;
     const subscriberCount = data?.statistics?.subscriberCount;
 
     return ( 
-         <div className={cx('wrapper', {channel})} onClick={() => document.title = channelTitle2}>
+         <div className={cx('wrapper', {channel, search})} onClick={() => document.title = channelTitle2}>
             <Link to={`/channel/${data?.id?.channelId}`}>
                 <div className={cx('content')}>
                     <img className={cx('img')} src={image || defaultImage} alt={channelTitle1}/>

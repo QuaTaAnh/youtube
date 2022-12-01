@@ -19,6 +19,7 @@ function Feed() {
         .catch((error) => console.log(error))
         setShowLoader(false);
     }, [selected]);
+    console.log(feedVideos);
 
     return (
         <div className={styles.wrapper}>

@@ -33,7 +33,7 @@ function Search() {
     }
 
     return (
-            <div className={styles.search}>
+        <div className={styles.search}>
                 <input
                     ref={inputRef}
                     value={searchTerm}
@@ -45,7 +45,7 @@ function Search() {
                 <button type="submit" className={styles.searchBtn}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} onClick={handleSubmit} />
                 </button>
-            </div>
+        </div>
     );
 }
 

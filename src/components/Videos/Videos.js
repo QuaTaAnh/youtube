@@ -18,7 +18,7 @@ function Videos({videos, channel, offerVideo, search}) {
             {videos.map((video, index)=>(
                 <Box key={index}>
                     {video.id.videoId && <VideoItem data={video} channel={channel} offerVideo={offerVideo} search={search}/>}
-                    {video.id.channelId && <ChannelItem data={video} channel={channel}/>}
+                    {video.id.channelId && <ChannelItem data={video} channel={channel} search={search}/>}
                 </Box>
             ))}
         </div>
