@@ -18,7 +18,7 @@
     ::before{
         content: "";
         position: absolute;
-        width: 2px;
+        width: 1px;
         height: 100%;
         top: 0;
         right: var(--search-width-btn);
@@ -38,18 +38,20 @@
 }
 
 .searchBtn{
-    font-size: 20px;
-    width: var(--search-width-btn);
-    height: 100%;
-    color: var(--primary);
-    background-color: var(--white);
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    cursor: pointer;
-}
-
-.search-btn:hover{
-    background-color: #f0f0f0;
+    button{
+        font-size: 20px;
+        color: var(--primary);
+        background-color: var(--white);
+        width: var(--search-width-btn);
+        height: 100%;
+        padding: 0 4px;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+        cursor: pointer;
+    }
+    :hover{
+        background-color: #f0f0f0;
+    }
 }
 
 @media only screen and (max-width: 426px) {

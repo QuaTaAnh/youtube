@@ -4,6 +4,7 @@ import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Search.module.scss';
 import { useNavigate } from 'react-router-dom';
+import Tippy from '@tippyjs/react';
 
 function Search() {
     const inputRef = useRef();
@@ -42,9 +43,17 @@ function Search() {
                     onKeyPress={handleEnter}
                 />
                 {!!searchTerm && <FontAwesomeIcon className={styles.clearBtn} icon={faXmark} onClick={handleClear} />}
-                <button type="submit" className={styles.searchBtn}>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} onClick={handleSubmit} />
-                </button>
+                <Tippy
+                    delay={[100, 50]}
+                    content="Tìm kiếm"
+                    placement="bottom"
+                >
+                    <div className={styles.searchBtn}>
+                        <button type="submit">
+                            <FontAwesomeIcon icon={faMagnifyingGlass} onClick={handleSubmit} />
+                        </button>
+                    </div>
+                </Tippy>
         </div>
     );
 }

@@ -1,11 +1,11 @@
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import Tippy from '@tippyjs/react';
 
 import styles from './Header.module.scss';
 import { logo } from '../../utils/constants';
 import Search from '../../components/Search/Search';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
 
 function Header() {
     const user = true;
@@ -16,9 +16,16 @@ function Header() {
         </Link>
         <Search />
         {user && <div className={styles.login}>
-            <button className={styles.more}> 
-                <FontAwesomeIcon className={styles.btnMore} icon={faEllipsisVertical}/>
-            </button>
+           <Tippy 
+                delay={[100, 50]}
+                content="Cài đặt"
+                placement='bottom'
+                theme="light-border"
+           >
+                <button className={styles.more}> 
+                    <FontAwesomeIcon className={styles.btnMore} icon={faEllipsisVertical}/>
+                </button>
+           </Tippy>
 
             <div className={styles.btnLogin}>
                 <button>

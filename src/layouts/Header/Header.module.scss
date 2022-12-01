@@ -26,7 +26,6 @@
     background-color: var(--black);
     color: var(--white);
     cursor: pointer;
-    margin-right: 6px;
 }
 
 .btnMore{
@@ -43,6 +42,7 @@
         width: 126px;
         height: 34px;
         border-radius: 50px;
+        margin-left: 6px;
         cursor: pointer;
         background-color: white;
         color: #065fd4;
@@ -71,5 +71,9 @@
     .logo > img{
         width: 60px;
         height: 60px;
+    }
+
+    .login{
+        display: none;
     }
 }
