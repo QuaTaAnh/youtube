@@ -56,15 +56,15 @@
 
 @media only screen and (max-width: 426px) {
     body {
-        min-width: 600px;
+        max-width: 426px;
     }
 
     .search{
-        height: calc(var(--search-height) + 8px);
+        height: calc(var(--search-height) + 6px);
         input{
             width: 100%;
-            font-size: 20px;
-            padding-right: 46px;
+            font-size: 22px;
+            padding-right: 40px;
         }
     }
     .clearBtn{
