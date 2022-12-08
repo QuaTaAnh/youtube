@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --primary: #ff0000;
     --black: #000;
     --white: #fff;
@@ -25,7 +25,7 @@ html {
     font-size: 62.5%;
 }
 
-body{
+body {
     font-family: var(--font-family);
     font-size: 1.6rem;
     background-color: var(--black);
@@ -45,7 +45,6 @@ html *::-webkit-scrollbar-track {
     border-radius: 0;
     background-color: rgba(0, 0, 0, 0);
 }
-
 
 @font-face {
     font-family: Roboto;
@@ -73,4 +72,8 @@ input,
 [tabline] {
     outline: none;
     border: none;
+}
+
+a {
+    text-decoration: none;
 }

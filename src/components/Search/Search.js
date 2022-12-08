@@ -44,7 +44,6 @@ function Search() {
                 />
                 {!!searchTerm && <FontAwesomeIcon className={styles.clearBtn} icon={faXmark} onClick={handleClear} />}
                 <Tippy
-                    delay={[100, 50]}
                     content="Tìm kiếm"
                     placement="bottom"
                 >

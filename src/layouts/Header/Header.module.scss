@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     position: fixed;
     top: 0;
     z-index: 1;
@@ -11,30 +11,57 @@
     background-color: var(--black);
 }
 
-.logo > img{
+.logo > img {
     width: 45px;
     height: 45px;
 }
 
-.login{
-    display: flex; 
+.user {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.more{
+.camera,
+.bell {
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.camera,
+.bell,
+.user img {
+    margin-left: 30px;
+}
+
+.avatar img {
+    border-radius: 50%;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+
+.more {
     padding: 8px;
     background-color: var(--black);
     color: var(--white);
     cursor: pointer;
 }
 
-.btnMore{
+.btnMore {
     width: 20px;
     height: 20px;
 }
 
-.btnLogin{
-    button{
+.btnLogin {
+    button {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -47,32 +74,33 @@
         background-color: white;
         color: #065fd4;
     }
-    :hover{
+    :hover {
         background-color: #def1ff;
     }
 }
 
-.loginIcon{
+.loginIcon {
     padding-right: 8px;
     font-size: 20px;
 }
 
 @media only screen and (max-width: 426px) {
-    body, html {
+    body,
+    html {
         max-width: 426px;
     }
 
-    .wrapper{
+    .wrapper {
         width: 100%;
         height: 90px;
     }
 
-    .logo > img{
+    .logo > img {
         width: 48px;
         height: 48px;
     }
 
-    .login{
+    .login {
         display: none;
     }
 }
