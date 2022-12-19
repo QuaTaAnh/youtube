@@ -12,9 +12,10 @@ import styles from './Header.module.scss';
 import { logo } from '../../utils/constants';
 import Search from '../../components/Search/Search';
 import { images } from '../../assets/images';
+import Button from '../../components/Button/Button';
 
 function Header() {
-    const user = true;
+    const user = !true;
     return (
         <div className={styles.wrapper}>
             <Link
@@ -22,7 +23,7 @@ function Header() {
                 className={styles.logo}
                 onClick={() => (document.title = 'YouTube')}
             >
-                <img src={logo} alt="Logo" />
+                <img src={images.logo} alt="Logo" />
             </Link>
             <Search />
             {user ? (
@@ -51,17 +52,9 @@ function Header() {
                         </button>
                     </Tippy>
 
-                    <div className={styles.btnLogin}>
-                        <Link to="/login">
-                            <button>
-                                <FontAwesomeIcon
-                                    className={styles.loginIcon}
-                                    icon={faUserCircle}
-                                />
-                                Đăng nhập
-                            </button>
-                        </Link>
-                    </div>
+                    <Button to="/login" primary leftIcon={faUserCircle}>
+                        Đăng nhập
+                    </Button>
                 </div>
             )}
         </div>

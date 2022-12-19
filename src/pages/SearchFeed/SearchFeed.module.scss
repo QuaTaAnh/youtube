@@ -1,28 +1,31 @@
-.titleSearch{
+.titleSearch {
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    span{
+    color: #333;
+    font-weight: 600;
+    span {
         margin-left: 10px;
         font-size: 24px;
         color: var(--primary);
     }
 }
 
-.videos{
+.videos {
     margin-top: 68px;
 }
 
 @media only screen and (max-width: 426px) {
-    body, html {
+    body,
+    html {
         max-width: 426px;
     }
 
-    .titleSearch{
+    .titleSearch {
         margin: 50px 0 -30px;
         font-size: 26px;
-        span{
+        span {
             font-size: 28px;
         }
     }

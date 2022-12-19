@@ -1,16 +1,13 @@
-.wrapper{
-}
-
-.container{
+.container {
     display: flex;
 }
 
-.content{
+.content {
     margin-left: var(--default-width-sidebar);
     padding-left: 20px;
 }
 
-.title{
+.title {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 12px;
@@ -18,16 +15,17 @@
 }
 
 @media only screen and (max-width: 426px) {
-    body, html {
+    body,
+    html {
         max-width: 426px;
     }
-    
-    .content{
+
+    .content {
         margin: 100px 0 0 0;
         padding: 0;
     }
 
-    .title{
+    .title {
         font-size: 28px;
         padding-left: 20px;
     }

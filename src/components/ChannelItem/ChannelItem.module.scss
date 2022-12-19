@@ -1,23 +1,23 @@
-.wrapper{
+.wrapper {
     width: 296px;
     height: 254px;
     padding: 10px 16px 10px 0;
-    a{
+    a {
         text-decoration: none;
     }
 }
 
-.channel{
+.channel {
     margin: -100px auto 80px;
     padding: 0;
 }
 
-.search{
+.search {
     padding: 0;
     margin-top: -44px;
 }
 
-.content{
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,62 +25,63 @@
     padding: 40px 0;
 }
 
-.img{
+.img {
     width: 102px;
     width: 102px;
     border-radius: 50%;
 }
 
-.user-name{
+.user-name {
     display: flex;
     padding: 20px 0;
 }
 
-.user-name h3{
+.user-name h3 {
     font-size: 1.8rem;
-    color: var(--white);
+    color: var(--black);
     outline: none;
     text-decoration: none;
 }
 
-.check-icon{
+.check-icon {
     font-size: 1.2rem;
     padding: 2px 0;
     padding-left: 8px;
-    color: #ccc;
+    color: #606060;
 }
 
-.subscriber{
+.subscriber {
     font-size: 1.4rem;
     margin-top: -14px;
-    color: #ccc;
+    color: #606060;
 }
 
 @media only screen and (max-width: 426px) {
-    body, html {
+    body,
+    html {
         max-width: 426px;
     }
 
-    .wrapper{
+    .wrapper {
         width: 100%;
         padding: 0;
         margin: 12px 0;
     }
 
-    .channel{
+    .channel {
         margin: -100px auto 0;
     }
 
-    .img{
+    .img {
         width: 120px;
         height: 120px;
     }
 
-    .user-name > h3{
+    .user-name > h3 {
         font-size: 24px;
     }
 
-    .check-icon{
+    .check-icon {
         font-size: 20px;
     }
 }

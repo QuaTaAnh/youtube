@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const logo = 'https://i.ibb.co/s9Qys2j/logo.png';
 
-export const defaultImage = 'https://i.ibb.co/G2L2Gwp/API-Course.png';
+// export const defaultImage = 'https://i.ibb.co/G2L2Gwp/API-Course.png';
 
 const MENU = [
     { name: 'Thịnh hành', icon: <FontAwesomeIcon icon={faFire} /> },

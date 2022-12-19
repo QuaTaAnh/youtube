@@ -1,16 +1,16 @@
-.wrapper{
+.wrapper {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-.load{
-    font-size: 40px;
+.load {
+    font-size: 30px;
     color: var(--primary);
     animation: spinner 1.2s linear infinite;
 }
 
-@keyframes spinner{
+@keyframes spinner {
     from {
         transform: rotate(0);
     }

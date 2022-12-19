@@ -7,61 +7,51 @@ import Channel from './pages/Channel/Channel';
 import MainLayout from './layouts/MainLayout/MainLayout';
 import OnlyHeader from './layouts/OnlyHeader/OnlyHeader';
 import Login from './pages/Login/Login';
-import AuthProvider from './Context/AuthProvider';
 
 function App() {
     return (
         <BrowserRouter>
-            <AuthProvider>
-                <div className="App">
-                    <Routes>
-                        <Route
-                            path="/"
-                            element={
-                                <MainLayout>
-                                    <Feed />
-                                </MainLayout>
-                            }
-                        />
+            <div className="App">
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <MainLayout>
+                                <Feed />
+                            </MainLayout>
+                        }
+                    />
 
-                        <Route
-                            path="/search/:searchTerm"
-                            element={
-                                <OnlyHeader>
-                                    <SearchFeed />
-                                </OnlyHeader>
-                            }
-                        />
+                    <Route
+                        path="/search/:searchTerm"
+                        element={
+                            <OnlyHeader>
+                                <SearchFeed />
+                            </OnlyHeader>
+                        }
+                    />
 
-                        <Route
-                            path="/video/:id"
-                            element={
-                                <MainLayout>
-                                    <Video />
-                                </MainLayout>
-                            }
-                        />
+                    <Route
+                        path="/video/:id"
+                        element={
+                            <MainLayout>
+                                <Video />
+                            </MainLayout>
+                        }
+                    />
 
-                        <Route
-                            path="/channel/:id"
-                            element={
-                                <MainLayout channel>
-                                    <Channel />
-                                </MainLayout>
-                            }
-                        />
+                    <Route
+                        path="/channel/:id"
+                        element={
+                            <MainLayout channel>
+                                <Channel />
+                            </MainLayout>
+                        }
+                    />
 
-                        <Route
-                            path="/login"
-                            element={
-                                <OnlyHeader>
-                                    <Login />
-                                </OnlyHeader>
-                            }
-                        />
-                    </Routes>
-                </div>
-            </AuthProvider>
+                    <Route path="/login" element={<Login />} />
+                </Routes>
+            </div>
         </BrowserRouter>
     );
 }
