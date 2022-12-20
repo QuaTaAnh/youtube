@@ -14,7 +14,7 @@ function Login() {
                     <Button login loginIcon={USER}>
                         Sử dụng email / số điện thoại
                     </Button>
-                    <Button login loginIcon={FACEBOOK}>
+                    <Button login loginIcon={FACEBOOK} >
                         Tiếp tục với facebook
                     </Button>
                     <Button login loginIcon={GOOGLE}>

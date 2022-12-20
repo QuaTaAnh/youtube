@@ -4,19 +4,17 @@
     height: 100vh;
     background: url('../../assets/images/bg_login.jpg') no-repeat fixed;
     background-size: 100% 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .loginContainer {
     position: absolute;
-    width: 640px;
-    height: 600px;
+    width: 50%;
+    height: 100vh;
     color: var(--black);
     text-align: center;
     padding: 48px 16px;
-    border-radius: 8px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     background-color: var(--white);
 }
 

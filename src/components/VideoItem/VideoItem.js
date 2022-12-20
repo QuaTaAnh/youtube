@@ -10,6 +10,7 @@ import { images } from '../../assets/images';
 const cx = classNames.bind(styles);
 
 function VideoItem({
+    data,
     data: {
         id: { videoId },
         snippet,
@@ -18,6 +19,7 @@ function VideoItem({
     offerVideo,
     search,
 }) {
+    console.log(data);
     const classes = cx('wrapper', {
         channel,
         offerVideo,
@@ -60,7 +62,9 @@ function VideoItem({
                             : '/watch?v=SYAwVG6Ujco'
                     }
                     className={cx('channel-title')}
-                    onClick={() => (document.title = channelTitle)}
+                    onClick={() =>
+                        (document.title = channelTitle + ' - YouTube')
+                    }
                 >
                     {channelTitle}
                     <FontAwesomeIcon

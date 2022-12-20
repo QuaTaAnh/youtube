@@ -13,14 +13,13 @@
     flex-direction: column;
     width: 208px;
     margin: 12px 20px 8px 0;
-    border-radius: 66px;
+    border-radius: 10px;
     cursor: pointer;
     :hover {
-        border-radius: 66px;
         background-color: var(--primary);
         .icon,
         .title {
-            color: #fff;
+            color: #fff !important;
         }
     }
 }
@@ -29,8 +28,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 66px;
+    border-radius: 10px;
     padding: 8px 0 8px 20px;
     transition: all 0.1s linear;
 }
@@ -53,6 +51,7 @@
 .copyright {
     margin-top: 40px;
     font-size: 14px;
+    color: var(--primary);
 }
 
 @media only screen and (max-width: 426px) {

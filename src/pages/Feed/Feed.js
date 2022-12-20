@@ -1,6 +1,6 @@
 import Videos from '../../components/Videos/Videos';
 import Sidebar from '../../layouts/Sidebar/Sidebar';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 import styles from './Feed.module.scss';
 import { request } from '../../utils/request';
@@ -10,25 +10,24 @@ function Feed() {
     const [selected, setSelected] = useState('Thịnh hành');
     const [feedVideos, setFeedVideos] = useState([]);
     const [showLoader, setShowLoader] = useState(false);
-    document.title = selected;
-    
-    useEffect(() =>{
+
+    useEffect(() => {
+        document.title = 'YouTube';
         setShowLoader(true);
         request(`search?part=id,snippet&q=${selected}`)
-        .then((data) => setFeedVideos(data.items))
-        .catch((error) => console.log(error))
+            .then((data) => setFeedVideos(data.items))
+            .catch((error) => console.log(error));
         setShowLoader(false);
     }, [selected]);
-    console.log(feedVideos);
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
-                <Sidebar selected={selected} setSelected={setSelected}/>
+                <Sidebar selected={selected} setSelected={setSelected} />
                 <div className={styles.content}>
                     <div className={styles.title}>{selected}</div>
                     {showLoader && <Loader />}
-                    <Videos videos={feedVideos}/>
+                    <Videos videos={feedVideos} />
                 </div>
             </div>
         </div>

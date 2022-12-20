@@ -9,26 +9,40 @@ import Loader from '../Loader/Loader';
 
 const cx = classNames.bind(styles);
 
-function Videos({videos, channel, offerVideo, search}) {
-    if(!videos.length) {
+function Videos({ videos, channel, offerVideo, search }) {
+    console.log(videos);
+    if (!videos.length) {
         return <Loader />;
     }
-    return ( 
+    return (
         <div className={cx('wrapper')}>
-            {videos.map((video, index)=>(
+            {videos.map((video, index) => (
                 <Box key={index}>
-                    {video.id.videoId && <VideoItem data={video} channel={channel} offerVideo={offerVideo} search={search}/>}
-                    {video.id.channelId && <ChannelItem data={video} channel={channel} search={search}/>}
+                    {video.id.videoId && (
+                        <VideoItem
+                            data={video}
+                            channel={channel}
+                            offerVideo={offerVideo}
+                            search={search}
+                        />
+                    )}
+                    {video.id.channelId && (
+                        <ChannelItem
+                            data={video}
+                            channel={channel}
+                            search={search}
+                        />
+                    )}
                 </Box>
             ))}
         </div>
-     );
+    );
 }
 
 Videos.propTypes = {
     videos: PropTypes.array.isRequired,
     channel: PropTypes.bool,
     offerVideo: PropTypes.bool,
-}
+};
 
 export default Videos;

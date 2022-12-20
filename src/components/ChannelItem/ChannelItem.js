@@ -18,7 +18,7 @@ function ChannelItem({ data, channel, search }) {
     return (
         <div
             className={cx('wrapper', { channel, search })}
-            onClick={() => (document.title = channelTitle2)}
+            onClick={() => (document.title = channelTitle2 + ' - YouTube')}
         >
             <Link to={`/channel/${data?.id?.channelId}`}>
                 <div className={cx('content')}>

@@ -9,7 +9,6 @@ import {
 import Tippy from '@tippyjs/react';
 
 import styles from './Header.module.scss';
-import { logo } from '../../utils/constants';
 import Search from '../../components/Search/Search';
 import { images } from '../../assets/images';
 import Button from '../../components/Button/Button';
@@ -52,7 +51,12 @@ function Header() {
                         </button>
                     </Tippy>
 
-                    <Button to="/login" primary leftIcon={faUserCircle}>
+                    <Button
+                        to="/login"
+                        onClick={() => (document.title = 'Đăng nhập')}
+                        primary
+                        leftIcon={faUserCircle}
+                    >
                         Đăng nhập
                     </Button>
                 </div>
