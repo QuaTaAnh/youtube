@@ -5,20 +5,29 @@ import styles from './Videos.module.scss';
 import Box from '../Box/Box';
 import VideoItem from '../VideoItem/VideoItem';
 import ChannelItem from '../ChannelItem/ChannelItem';
+import { useEffect, useState } from 'react';
 import Loader from '../Loader/Loader';
 
 const cx = classNames.bind(styles);
 
 function Videos({ videos, channel, offerVideo, search }) {
-    console.log(videos);
-    if (!videos.length) {
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+    }, []);
+
+    if (videos.length === 0) {
         return <Loader />;
     }
     return (
         <div className={cx('wrapper')}>
             {videos.map((video, index) => (
                 <Box key={index}>
-                    {video.id.videoId && (
+                    {loading && <VideoItem.Loading />}
+
+                    {!loading && video.id.videoId && (
                         <VideoItem
                             data={video}
                             channel={channel}
@@ -26,7 +35,8 @@ function Videos({ videos, channel, offerVideo, search }) {
                             search={search}
                         />
                     )}
-                    {video.id.channelId && (
+                    {loading && <ChannelItem.Loading />}
+                    {!loading && video.id.channelId && (
                         <ChannelItem
                             data={video}
                             channel={channel}

@@ -12,6 +12,7 @@ import styles from './Header.module.scss';
 import Search from '../../components/Search/Search';
 import { images } from '../../assets/images';
 import Button from '../../components/Button/Button';
+import 'tippy.js/themes/translucent.css';
 
 function Header() {
     const user = !true;
@@ -41,7 +42,7 @@ function Header() {
                     <Tippy
                         content="Cài đặt"
                         placement="bottom"
-                        theme="light-border"
+                        theme="translucent"
                     >
                         <button className={styles.more}>
                             <FontAwesomeIcon

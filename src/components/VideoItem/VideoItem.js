@@ -6,11 +6,11 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './VideoItem.module.scss';
 import { images } from '../../assets/images';
+import Loader from '../Loader/Loader';
 
 const cx = classNames.bind(styles);
 
 function VideoItem({
-    data,
     data: {
         id: { videoId },
         snippet,
@@ -19,7 +19,6 @@ function VideoItem({
     offerVideo,
     search,
 }) {
-    console.log(data);
     const classes = cx('wrapper', {
         channel,
         offerVideo,
@@ -76,6 +75,16 @@ function VideoItem({
         </div>
     );
 }
+
+const Loading = () => {
+    return (
+        <div className={styles.loading}>
+            <Loader />
+        </div>
+    );
+};
+
+VideoItem.Loading = Loading;
 
 VideoItem.propTypes = {
     data: PropTypes.object.isRequired,

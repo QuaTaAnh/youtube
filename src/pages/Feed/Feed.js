@@ -11,6 +11,8 @@ function Feed() {
     const [feedVideos, setFeedVideos] = useState([]);
     const [showLoader, setShowLoader] = useState(false);
 
+    console.log(feedVideos);
+
     useEffect(() => {
         document.title = 'YouTube';
         setShowLoader(true);
