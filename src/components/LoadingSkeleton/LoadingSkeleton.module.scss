@@ -14,6 +14,30 @@
     animation: shine 1s ease infinite;
 }
 
+.imageVideos{
+    height: 150px;
+}
+
+.titleVideos{ 
+    height: 40px;
+    margin-top: 8px;
+}
+
+.channelTitleVideos{
+    height: 12px;
+}
+
+.imageChannel{
+    height: 102px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.userNameChannel{
+    width: 122px;
+    height: 22px;
+}
+
 @keyframes shine {
     to {
         background-position: right -40px top 0;

@@ -6,7 +6,7 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './VideoItem.module.scss';
 import { images } from '../../assets/images';
-import Loader from '../Loader/Loader';
+import LoadingSkeleton from '../LoadingSkeleton/LoadingSkeleton';
 
 const cx = classNames.bind(styles);
 
@@ -76,13 +76,23 @@ function VideoItem({
     );
 }
 
-const Loading = () => {
+const Loading = () =>{
     return (
-        <div className={styles.loading}>
-            <Loader />
+        <div className={cx('wrapper')}>
+            <div className={cx('image')}>
+                <LoadingSkeleton imageVideos/>
+            </div>
+            <div>
+                <div className={cx('title')}>
+                    <LoadingSkeleton titleVideos/>
+                </div>
+                <div className={cx('channel-title')}>
+                    <LoadingSkeleton channelTitleVideos/>
+                </div>
+            </div>
         </div>
-    );
-};
+    )
+}
 
 VideoItem.Loading = Loading;
 

@@ -6,7 +6,7 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './ChannelItem.module.scss';
 import { images } from '../../assets/images';
-import Loader from '../Loader/Loader';
+import LoadingSkeleton from '../LoadingSkeleton/LoadingSkeleton';
 
 const cx = classNames.bind(styles);
 
@@ -47,13 +47,20 @@ function ChannelItem({ data, channel, search }) {
     );
 }
 
-const Loading = () => {
+const Loading = () =>{
     return (
-        <div className={styles.loading}>
-            <Loader />
+        <div className={cx('wrapper')}>
+            <div className={cx('content')}>
+                <div className={cx('img')}>
+                    <LoadingSkeleton imageChannel/>
+                </div>
+                <div className={cx('user-name')}>
+                    <LoadingSkeleton userNameChannel/>
+                </div>
+            </div>
         </div>
-    );
-};
+    )
+}
 
 ChannelItem.Loading = Loading;
 

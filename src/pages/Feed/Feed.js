@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import styles from './Feed.module.scss';
 import { request } from '../../utils/request';
-import Loader from '../../components/Loader/Loader';
+import Loader from '../../components/LoadingSkeleton/LoadingSkeleton';
 
 function Feed() {
     const [selected, setSelected] = useState('Thịnh hành');

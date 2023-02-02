@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import styles from './SearchFeed.module.scss';
 import Videos from '../../components/Videos/Videos';
 import { request } from '../../utils/request';
-import Loader from '../../components/Loader/Loader';
+import Loader from '../../components/LoadingSkeleton/LoadingSkeleton';
 
 function SearchFeed() {
     const { searchTerm } = useParams();
