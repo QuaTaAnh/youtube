@@ -12,11 +12,11 @@ const cx = classNames.bind(styles);
 
 function Videos({ videos, channel, offerVideo, search }) {
     const [loading, setLoading] = useState(true);
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000);
-    }, []);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setLoading(false);
+    //     }, 1000);
+    // }, []);
 
     if (videos.length === 0) {
         return <Loader />;
