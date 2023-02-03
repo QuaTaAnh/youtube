@@ -16,6 +16,10 @@ function Videos({ videos, channel, offerVideo, search }) {
         setTimeout(()=>{
             setLoading(false);
         }, 2000)
+
+        return () => {
+            clearTimeout();
+        }
     }, [])
 
     return (

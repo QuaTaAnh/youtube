@@ -3,17 +3,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 16px 0;
     color: #333;
     font-weight: 600;
     span {
-        margin-left: 10px;
+        padding-left: 10px;
         font-size: 24px;
         color: var(--primary);
     }
 }
 
 .videos {
-    margin-top: 68px;
+    margin-top: 44px;
 }
 
 @media only screen and (max-width: 426px) {
