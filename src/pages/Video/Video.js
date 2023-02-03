@@ -31,8 +31,8 @@ function Video() {
                         width="100%"
                         height="100%"
                         url={`https://www.youtube.com/watch?v=${id}`}
-                        playing
-                        controls
+                        playing={true}
+                        controls={true}
                     />
                 </div>
                 <div className={styles.title}>{video?.snippet?.title}</div>

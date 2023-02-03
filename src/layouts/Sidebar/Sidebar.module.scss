@@ -1,16 +1,17 @@
 .wrapper {
     position: fixed;
+    top: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: var(--default-width-sidebar);
-    border-right: 1px solid #ccc;
-    overflow-y: auto;
+    margin-top: var(--default-height);
+    overflow: auto;
 }
 
 .menu {
     display: flex;
-    flex-direction: column;
     width: 208px;
     margin: 12px 20px 8px 0;
     border-radius: 10px;
@@ -46,12 +47,6 @@
 
 .title {
     font-size: 14px;
-}
-
-.copyright {
-    margin-top: 40px;
-    font-size: 14px;
-    color: var(--primary);
 }
 
 @media only screen and (max-width: 426px) {
@@ -92,9 +87,5 @@
 
     .title {
         font-size: 20px;
-    }
-
-    .copyright {
-        display: none;
     }
 }

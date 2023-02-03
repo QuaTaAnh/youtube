@@ -36,8 +36,6 @@ function Sidebar({ selected, setSelected }) {
                     </div>
                 </button>
             ))}
-
-            <div className={styles.copyright}>Copyright © 2022 Anh Trần</div>
         </div>
     );
 }
