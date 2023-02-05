@@ -15,6 +15,7 @@ function ChannelItem({ data, channel, search }) {
     const channelTitle1 = data?.snippet?.channelTitle;
     const channelTitle2 = data?.snippet?.title;
     const subscriberCount = data?.statistics?.subscriberCount;
+    // console.log(data);
 
     return (
         <div

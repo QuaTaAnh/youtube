@@ -25,6 +25,8 @@ function VideoItem({
         search,
     });
 
+    console.log(snippet);
+
     const image = snippet?.thumbnails?.high?.url;
     const title = snippet?.title.slice(0, 50);
     const channelTitle = snippet?.channelTitle.slice(0, 40);
