@@ -17,7 +17,7 @@ function SearchFeed() {
     return (
         <div className={styles.wrapper}>
             <div className={styles.titleSearch}>
-                Kết quả: <span>{searchTerm.slice(0, 30)}</span>
+                Đang hiển thị kết quả cho: <span>{searchTerm.slice(0, 30)}</span>
             </div>
             <div className={styles.videos}>
                 {<Videos videos={searchVideos} search/>}

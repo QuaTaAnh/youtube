@@ -15,13 +15,14 @@ function Button({
     onClick,
     passProps,
     leftIcon,
-    loginIcon,
+    loginIcon, 
+    className
 }) {
     const props = {
         onClick,
         ...passProps,
     };
-    const classes = cx('wrapper', { primary, login });
+    const classes = cx('wrapper', { primary, login }, className);
     let Component = 'Button';
     if (to) {
         props.to = to;

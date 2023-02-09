@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 
 function Videos({ videos, channel, offerVideo, search }) {
     const [loading, setLoading] = useState(true);
-    
+
     useEffect(()=>{
         setTimeout(()=>{
             setLoading(false);
