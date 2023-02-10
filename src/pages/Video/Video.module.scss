@@ -64,11 +64,6 @@
 }
 
 @media only screen and (max-width: 426px) {
-    body,
-    html {
-        max-width: 426px;
-    }
-
     .wrapper {
         width: 100%;
         display: flex;

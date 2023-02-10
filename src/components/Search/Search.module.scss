@@ -41,7 +41,7 @@
 .searchBtn {
     button {
         font-size: 20px;
-        color: var(--primary);
+        color: #0f0f0f;
         background-color: var(--white);
         width: var(--search-width-btn);
         height: 100%;
@@ -56,10 +56,6 @@
 }
 
 @media only screen and (max-width: 426px) {
-    body {
-        max-width: 426px;
-    }
-
     .search {
         margin: 0;
         height: calc(var(--search-height) + 6px);

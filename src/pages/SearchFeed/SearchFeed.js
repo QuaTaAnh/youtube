@@ -10,6 +10,7 @@ function SearchFeed() {
     const [searchVideos, setSearchVideos] = useState([]);
 
     useEffect(() => {
+        document.title = searchTerm + " - YouTube";
         request(`search?part=snippet&q=${searchTerm}`)
           .then((data) => setSearchVideos(data.items))
       }, [searchTerm]);

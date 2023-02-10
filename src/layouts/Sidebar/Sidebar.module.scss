@@ -75,9 +75,8 @@
 }
 
 @media only screen and (max-width: 426px) {
-    body,
-    html {
-        max-width: 426px;
+    .login{
+        display: none;
     }
 
     .wrapper {
@@ -85,9 +84,11 @@
         height: 90px;
         display: flex;
         padding: 0;
+        margin-top: 90px;
         flex-direction: row;
         position: none;
         overflow-y: none;
+        // overflow: hidden;
         background-color: var(--white);
     }
 
