@@ -25,12 +25,11 @@ function VideoItem({
         search,
     });
 
-    console.log(snippet);
-
     const image = snippet?.thumbnails?.high?.url;
-    const title = snippet?.title.slice(0, 50);
+    const title = snippet?.title;
     const channelTitle = snippet?.channelTitle.slice(0, 40);
     const channelId = snippet?.channelId;
+    const videoReleaseDate = snippet?.publishTime.slice(0, 10);
 
     return (
         <div className={classes}>
@@ -54,7 +53,7 @@ function VideoItem({
                     className={cx('title')}
                     onClick={() => (document.title = title)}
                 >
-                    {title}
+                    {title.length > 60 ? title.slice(0, 60) + '...' : title}
                 </Link>
                 <Link
                     to={
@@ -72,29 +71,30 @@ function VideoItem({
                         className={cx('check-icon')}
                         icon={faCheckCircle}
                     />
+                    <div>{videoReleaseDate}</div>
                 </Link>
             </div>
         </div>
     );
 }
 
-const Loading = () =>{
+const Loading = () => {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('image')}>
-                <LoadingSkeleton imageVideos/>
+                <LoadingSkeleton imageVideos />
             </div>
             <div>
                 <div className={cx('title')}>
-                    <LoadingSkeleton titleVideos/>
+                    <LoadingSkeleton titleVideos />
                 </div>
                 <div className={cx('channel-title')}>
-                    <LoadingSkeleton channelTitleVideos/>
+                    <LoadingSkeleton channelTitleVideos />
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 VideoItem.Loading = Loading;
 

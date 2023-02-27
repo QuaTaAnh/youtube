@@ -12,6 +12,7 @@ function Video() {
     const { id } = useParams();
     const [video, setVideo] = useState([]);
     const [videos, setVideos] = useState([]);
+    console.log(id);
 
     useEffect(() => {
         request(`videos?part=contentDetails,snippet,statistics&id=${id}`)
