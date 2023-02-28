@@ -7,14 +7,19 @@ import {
     faUserCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
+import { useContext } from 'react';
 
 import styles from './Header.module.scss';
 import Search from '../../components/Search/Search';
 import { images } from '../../assets/images';
 import Button from '../../components/Button/Button';
 import 'tippy.js/themes/translucent.css';
+import { AuthContext } from '../../Context/AuthProvider';
 
 function Header() {
+    const data = useContext(AuthContext);
+    console.log({ data });
+
     const user = !true;
     return (
         <div className={styles.wrapper}>

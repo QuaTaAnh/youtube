@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 import Button from '../../components/Button/Button';
 import styles from './Login.module.scss';
 import { USER, GOOGLE, FACEBOOK, GITHUB } from '../../components/Icon/Icon';
+import firebase, { auth } from '../../firebase/config';
+
+const fbProvider = new firebase.auth.FacebookAuthProvider();
 
 function Login() {
+    const handleFbLogin = () => {
+        auth.signInWithPopup(fbProvider);
+    };
     return (
         <div className={styles.wrapper}>
             <div className={styles.loginContainer}>
@@ -14,7 +19,7 @@ function Login() {
                     <Button login loginIcon={USER}>
                         Sử dụng email / số điện thoại
                     </Button>
-                    <Button login loginIcon={FACEBOOK} >
+                    <Button login loginIcon={FACEBOOK} onClick={handleFbLogin}>
                         Tiếp tục với facebook
                     </Button>
                     <Button login loginIcon={GOOGLE}>

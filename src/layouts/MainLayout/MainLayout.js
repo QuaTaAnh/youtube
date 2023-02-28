@@ -6,20 +6,18 @@ import styles from './MainLayout.module.scss';
 
 const cx = classNames.bind(styles);
 
-function MainLayout({children, channel}) {
-    return ( 
+function MainLayout({ children, channel }) {
+    return (
         <div className={cx('wrapper')}>
             <Header />
-            <div className={cx('container',{channel})}>
-                {children}
-            </div>
+            <div className={cx('container', { channel })}>{children}</div>
         </div>
-     );
+    );
 }
 
 MainLayout.propTypes = {
     children: PropTypes.node.isRequired,
     channel: PropTypes.bool,
-}
+};
 
 export default MainLayout;

@@ -7,11 +7,12 @@ import Channel from './pages/Channel/Channel';
 import MainLayout from './layouts/MainLayout/MainLayout';
 import OnlyHeader from './layouts/OnlyHeader/OnlyHeader';
 import Login from './pages/Login/Login';
+import AuthProvider from './Context/AuthProvider';
 
 function App() {
     return (
         <BrowserRouter>
-            <div className="App">
+            <AuthProvider>
                 <Routes>
                     <Route
                         path="/"
@@ -48,10 +49,9 @@ function App() {
                             </MainLayout>
                         }
                     />
-
                     <Route path="/login" element={<Login />} />
                 </Routes>
-            </div>
+            </AuthProvider>
         </BrowserRouter>
     );
 }
