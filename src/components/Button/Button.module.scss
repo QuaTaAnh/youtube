@@ -4,10 +4,6 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    margin-bottom: 14px;
-    + .wrapper {
-        margin-bottom: 14px;
-    }
 }
 
 .primary {
@@ -35,6 +31,7 @@
 .login {
     width: 320px;
     height: 44px;
+    margin-bottom: 14px;
     .title {
         display: flex;
         align-items: center;
@@ -57,5 +54,11 @@
         height: 20px;
         padding: 0 50px 0 18px;
         line-height: 20px;
+    }
+}
+
+.more {
+    :hover {
+        background-color: #f2f2f2;
     }
 }

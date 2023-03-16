@@ -5,15 +5,15 @@ import { auth } from '../firebase/config';
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-    const { user, setUser } = useState({});
     const navigate = useNavigate();
+    const { user, setUser } = useState({});
 
     useEffect(() => {
         const unAuth = auth.onAuthStateChanged((user) => {
             if (user) {
-                // console.log(user);
-                // const { photoURL, displayName } = user;
-                setUser({ user });
+                const { photoURL, displayName } = user;
+                console.log({ user });
+                setUser({ photoURL, displayName });
                 navigate('/');
                 return;
             }

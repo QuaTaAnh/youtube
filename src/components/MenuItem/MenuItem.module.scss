@@ -1,0 +1,17 @@
+// .wrapper {
+//     display: flex;
+//     flex-direction: column;
+// }
+.menuItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 280px;
+    padding: 14px;
+    cursor: pointer;
+    font-size: 16px;
+    span {
+        width: 20px;
+        margin-right: 10px;
+    }
+}

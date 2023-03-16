@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
-import {
-    faUserCircle,
-} from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Sidebar.module.scss';
 import MENU from '../../utils/constants';
@@ -13,12 +11,12 @@ function Sidebar({ selected, setSelected }) {
             <div className={styles.login}>
                 <p>Hãy đăng nhập để thích video, bình luận và đăng ký kênh.</p>
                 <Button
-                        to="/login"
-                        onClick={() => (document.title = 'Đăng nhập')}
-                        primary
-                        leftIcon={faUserCircle}
-                    >
-                        Đăng nhập
+                    to="/login"
+                    onClick={() => (document.title = 'Đăng nhập')}
+                    primary
+                    leftIcon={faUserCircle}
+                >
+                    Đăng nhập
                 </Button>
             </div>
             {MENU.map((item, index) => (
@@ -57,7 +55,7 @@ function Sidebar({ selected, setSelected }) {
 
 Sidebar.propTypes = {
     selected: PropTypes.string.isRequired,
-    setSelected: PropTypes.string.isRequired,
+    setSelected: PropTypes.any.isRequired,
 };
 
 export default Sidebar;
